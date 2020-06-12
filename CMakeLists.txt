@@ -62,6 +62,7 @@ SET(TRANS
 	greeter_de.ts
 	greeter_en.ts
 	greeter_fr.ts
+	greeter_it.ts
 )
 
 qt5_add_translation(QM ${TRANS})

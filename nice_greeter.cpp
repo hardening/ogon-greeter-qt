@@ -177,7 +177,7 @@ void NiceGreeterWindow::setupEffects() {
 	QObject *qogon = mGreeter->getQOgon();
 
 	if (qogon)
-		init2colors = initialState->addTransition(qogon,	SIGNAL(ogonScreenReady()), colorsState);
+		init2colors = initialState->addTransition(qogon, SIGNAL(ogonScreenReady()), colorsState);
 	else
 		init2colors = initialState->addTransition(this,	SIGNAL(greeterInitialized()), colorsState);
 

@@ -45,7 +45,7 @@ AbstractGreeter::AbstractGreeter(quint32 sessionId, const QString &user, const Q
 {
 	mQtTranslator.load("qt_en", QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 	mGreeterTranslator.load("greeter_en", TRANSLATIONS_DIR);
-	mLocalizationFiles << "en" << "fr"  << "de";
+	mLocalizationFiles << "en" << "fr"  << "de" << "it";
 
 	mLowResGreeter = new LowResGreeterWindow(this, user, domain);
 	mUi = mNiceGreeter = new NiceGreeterWindow(this, user, domain);
@@ -246,6 +246,7 @@ void AbstractGreeter::handleAuthResponse(const QByteArray &reply) {
 		break;
 	default:
 		qWarning("%s: unexpected authStatus %d", __FUNCTION__, (int)response.authstatus());
+		mUi->onLoginFailed();
 		break;
 	}
 }
